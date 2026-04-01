@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Fuente tipo código -->
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+<title>Git UI</title>
+
+<style>
+    body {
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Glow effect */
+    .glow:hover {
+        box-shadow: 0 0 15px rgba(99,102,241,0.6);
+        transform: scale(1.02);
+        transition: all 0.3s ease;
+    }
+
+    /* Animación fade */
+    .fade-in {
+        animation: fade 1s ease-in-out;
+    }
+
+    @keyframes fade {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+</head>
+
+<body class="relative text-slate-200 p-4">
+
+<!-- Imagen fondo -->
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618401471353-b98afee0b2eb')] bg-cover bg-center"></div>
+
+<!-- Overlay blur -->
+<div class="absolute inset-0 bg-gradient-to-b from-slate-900/90 to-slate-800/70 backdrop-blur-md"></div>
+
+<main class="relative max-w-3xl mx-auto fade-in">
+
+    <!-- HEADER -->
+    <div class="text-center mb-10">
+        <h1 class="text-2xl md:text-3xl font-bold text-white tracking-widest drop-shadow-[0_0_10px_rgba(99,102,241,0.8)]">
+            Comandos básicos Git & GitHub
+        </h1>
+        <p class="text-slate-400 text-sm mt-2">
+            Flujo esencial para trabajar con repositorios
+        </p>
+        <div class="w-32 h-[2px] bg-indigo-500 mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <!-- CARD 01 -->
+    <div class="bg-slate-800/40 border border-indigo-500/30 p-5 rounded-xl mb-6 glow">
+        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm mb-3">01</div>
+        <h3 class="font-bold text-white uppercase text-xs tracking-widest">Inicializar proyecto</h3>
+        <div class="bg-black/70 p-4 rounded text-emerald-400 text-sm border-l-4 border-indigo-500 mt-3">
+            mkdir proyecto-git <br>
+            cd proyecto-git <br>
+            git init
+        </div>            
+    </div>  
+
+    <!-- CARD 02 -->
+    <div class="bg-slate-800/40 border border-indigo-500/30 p-5 rounded-xl mb-6 glow">
+        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm mb-3">02</div>
+        <h3 class="font-bold text-white uppercase text-xs tracking-widest">Primer commit</h3>
+        <div class="bg-black/70 p-4 rounded text-emerald-400 text-sm border-l-4 border-indigo-500 mt-3">
+            git add . <br>
+            git commit -m "proyecto base" <br>
+            git status
+        </div>            
+    </div> 
+
+    <!-- CARD 03 -->
+    <div class="bg-slate-800/40 border border-amber-400/40 p-5 rounded-xl mb-6 glow">
+        <div class="bg-amber-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm mb-3">03</div>
+        <h3 class="font-bold text-amber-400 uppercase text-xs italic tracking-widest">Crear repo en GitHub</h3>
+        <p class="text-slate-400 text-xs mt-1 italic">Crear repositorio desde la web</p>                     
+    </div>  
+
+    <!-- CARD 04 -->
+    <div class="bg-slate-800/40 border border-indigo-500/30 p-5 rounded-xl mb-6 glow">
+        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm mb-3">04</div>
+        <h3 class="font-bold text-white uppercase text-xs tracking-widest">Vincular con GitHub</h3>
+        <div class="bg-black/70 p-4 rounded text-indigo-300 text-sm border-l-4 border-indigo-400 mt-3">
+            git remote add origin <span class="text-white">URL_DEL_REPO</span>
+        </div>            
+    </div>
+
+    <!-- CARD 05 -->
+    <div class="bg-slate-800/40 border border-indigo-500/30 p-5 rounded-xl mb-6 glow">
+        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm mb-3">05</div>
+        <h3 class="font-bold text-white uppercase text-xs tracking-widest">Push</h3>
+        <div class="bg-black/70 p-4 rounded text-indigo-300 text-sm border-l-4 border-white mt-3">
+            <span class="text-white">git push -u origin master</span>
+        </div>            
+    </div> 
+
+    <!-- CARD 06 -->
+    <div class="bg-slate-800/40 border border-indigo-500/30 p-5 rounded-xl mb-6 glow">
+        <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm mb-3">06</div>
+        <h3 class="font-bold text-white uppercase text-xs tracking-widest">Actualizar cambios</h3>
+        <div class="bg-black/70 p-4 rounded text-emerald-400 text-sm border-l-4 border-indigo-500 mt-3">
+            git add . <br>
+            git commit -m "nuevo cambio" <br>
+            git push origin master
+        </div>            
+    </div>        
+
+</main>
+
+</body>
+</html>
